@@ -9,11 +9,11 @@ import htbCover from "@/assets/hackthebox-cover.png";
 import thmCover from "@/assets/tryhackme-cover.png";
 
 const tabColorClasses = {
-  blue: "data-[active=true]:bg-team-blue data-[active=true]:text-white data-[active=true]:border-team-blue",
-  red: "data-[active=true]:bg-team-red data-[active=true]:text-white data-[active=true]:border-team-red",
-  purple: "data-[active=true]:bg-team-purple data-[active=true]:text-white data-[active=true]:border-team-purple",
-  teal: "data-[active=true]:bg-team-teal data-[active=true]:text-white data-[active=true]:border-team-teal",
-  amber: "data-[active=true]:bg-team-amber data-[active=true]:text-white data-[active=true]:border-team-amber",
+  blue: "text-team-blue border-team-blue data-[active=true]:bg-team-blue data-[active=true]:text-white",
+  red: "text-team-red border-team-red data-[active=true]:bg-team-red data-[active=true]:text-white",
+  purple: "text-team-purple border-team-purple data-[active=true]:bg-team-purple data-[active=true]:text-white",
+  teal: "text-team-teal border-team-teal data-[active=true]:bg-team-teal data-[active=true]:text-white",
+  amber: "text-team-amber border-team-amber data-[active=true]:bg-team-amber data-[active=true]:text-white",
 };
 
 const descBorderColor = {
@@ -102,7 +102,7 @@ export default function Index() {
               key={t.id}
               data-active={activeTeam === t.id}
               onClick={() => setActiveTeam(t.id)}
-              className={`px-3 py-2 sm:px-4 sm:py-2 rounded-lg border border-border text-xs sm:text-sm font-medium text-muted-foreground transition-all duration-200 hover:bg-secondary ${tabColorClasses[t.colorKey]}`}
+              className={`px-4 py-1.5 sm:px-5 sm:py-2 rounded-full border-2 bg-white text-xs sm:text-sm font-bold transition-all duration-200 hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] ${tabColorClasses[t.colorKey]}`}
             >
               {t.emoji} {t.name}
             </button>
