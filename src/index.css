@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 40 40% 96%;
+    --foreground: 220 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 15%;
+
+    --primary: 135 100% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 30% 90%;
+    --secondary-foreground: 220 20% 15%;
+
+    --muted: 40 20% 88%;
+    --muted-foreground: 220 15% 45%;
+
+    --accent: 135 100% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 100% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 25% 85%;
+    --input: 40 25% 85%;
+    --ring: 135 100% 40%;
+
+    --radius: 0.75rem;
+
+    /* Team colors */
+    --team-blue: 215 100% 40%;
+    --team-red: 0 100% 40%;
+    --team-purple: 275 100% 40%;
+    --team-teal: 175 100% 30%;
+    --team-amber: 30 100% 40%;
+
+    /* Glassmorphism */
+    --glass-bg: 0 0% 100%;
+    --glass-border: 40 25% 85%;
+    --glass-highlight: 135 100% 40%;
+
+    /* Glow effects */
+    --glow-green: 0 0% 0% / 0;
+    --glow-spread: 0 0 30px hsl(135 100% 40% / 0.15);
+
+    --sidebar-background: 40 40% 96%;
+    --sidebar-foreground: 220 20% 15%;
+    --sidebar-primary: 135 100% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 40 30% 90%;
+    --sidebar-accent-foreground: 220 20% 15%;
+    --sidebar-border: 40 25% 85%;
+    --sidebar-ring: 135 100% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  code, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Matrix rain background effect */
+@keyframes matrix-fade {
+  0%, 100% { opacity: 0.03; }
+  50% { opacity: 0.06; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes terminal-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.4s ease-out forwards;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.animate-terminal-blink {
+  animation: terminal-blink 1s step-end infinite;
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: hsl(var(--glass-bg) / 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid hsl(var(--glass-border));
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: hsl(var(--glass-border));
+  box-shadow: 0 0 20px hsl(var(--primary) / 0.05);
+}
+
+.glass-card-layer0 {
+  background: hsl(var(--glass-bg) / 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid hsl(var(--primary) / 0.3);
+  box-shadow: 0 0 30px hsl(var(--primary) / 0.08), inset 0 1px 0 hsl(var(--primary) / 0.1);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
