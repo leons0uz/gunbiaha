@@ -82,7 +82,7 @@ export default function Index() {
         <header className="mb-8">
           <div className="flex items-center gap-2 mb-2">
             <Terminal className="w-5 h-5 text-primary animate-glow-pulse" />
-            <span className="text-xs font-mono text-primary/70 tracking-wider uppercase">
+            <span className="text-xs font-mono text-primary/100 tracking-wider uppercase">
               Security Roadmap
             </span>
           </div>
